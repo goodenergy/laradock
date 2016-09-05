@@ -110,7 +110,7 @@ services:
             MYSQL_DATABASE: homestead
             MYSQL_USER: homestead
             MYSQL_PASSWORD: secret
-            MYSQL_ROOT_PASSWORD: root
+            MYSQL_ROOT_PASSWORD: ${TEST_VAR}
 
 ### PostgreSQL Container ####################################
 
@@ -252,7 +252,7 @@ services:
             PMA_ARBITRARY: 1
             MYSQL_USER: homestead
             MYSQL_PASSWORD: secret
-            MYSQL_ROOT_PASSWORD: root
+            MYSQL_ROOT_PASSWORD: ${TEST_VAR}
         volumes_from:
             - volumes_data
         ports:
