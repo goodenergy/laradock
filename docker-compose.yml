@@ -101,6 +101,7 @@ services:
 ### MySQL Container #########################################
 
     mysql:
+        env_file: .env
         build: ./mysql
         volumes_from:
             - volumes_data
@@ -110,7 +111,7 @@ services:
             MYSQL_DATABASE: homestead
             MYSQL_USER: homestead
             MYSQL_PASSWORD: secret
-            MYSQL_ROOT_PASSWORD: ${TEST_VAR}
+            MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
 
 ### PostgreSQL Container ####################################
 
@@ -247,12 +248,13 @@ services:
 ### phpMyAdmin Container ##################################
 
     phpmyadmin:
+        env_file: .env
         build: ./phpmyadmin
         environment:
             PMA_ARBITRARY: 1
             MYSQL_USER: homestead
             MYSQL_PASSWORD: secret
-            MYSQL_ROOT_PASSWORD: ${TEST_VAR}
+            MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
         volumes_from:
             - volumes_data
         ports:
