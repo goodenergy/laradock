@@ -101,7 +101,6 @@ services:
 ### MySQL Container #########################################
 
     mysql:
-        env_file: .env
         build: ./mysql
         volumes_from:
             - volumes_data
@@ -248,7 +247,6 @@ services:
 ### phpMyAdmin Container ##################################
 
     phpmyadmin:
-        env_file: .env
         build: ./phpmyadmin
         environment:
             PMA_ARBITRARY: 1
