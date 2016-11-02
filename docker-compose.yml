@@ -109,7 +109,7 @@ services:
         environment:
             MYSQL_DATABASE: homestead
             MYSQL_USER: homestead
-            MYSQL_PASSWORD: secret
+            MYSQL_PASSWORD: ${MYSQL_DB_PASSWORD}
             MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
 
 ### PostgreSQL Container ####################################
