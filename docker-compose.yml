@@ -240,7 +240,7 @@ services:
             - "443:443"
             - "2015:2015"
         volumes:
-            - ./caddy/Caddyfile:/etc/Caddyfile
+            - ../../Caddyfile:/etc/Caddyfile
             - ./logs/caddy:/var/log/caddy
         links:
             - php-fpm
